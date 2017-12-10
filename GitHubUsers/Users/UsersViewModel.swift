@@ -8,7 +8,8 @@ protocol UsersViewModelInputsType {
 }
 
 protocol UsersViewModelOutputsType {
-    var usersVariable: Variable<[User]> {get}
+    var usersVariable: Variable<[User]> { get }
+    var errorMessage: Variable<String?> { get }
 }
 
 protocol UsersViewModelActionsType {
@@ -34,7 +35,7 @@ final class UsersViewModel: UsersViewModelType {
     
     var usersVariable = Variable<[User]>([])
     private var error = PublishSubject<APIError>()
-//    var errorMessage = Observable<String>()
+    var errorMessage = Variable<String?>(nil)
     
     private let disposeBag: DisposeBag
     
@@ -111,6 +112,12 @@ final class UsersViewModel: UsersViewModelType {
                     }
             }).disposed(by: disposeBag)
         
+        bindErrors()
+        
+    }
+    
+    private func bindErrors() {
+        error.map(ErrorBuilder.errorMessage).bind(to: errorMessage).disposed(by: disposeBag)
     }
     
     private func userWith(image: UIImage, from fetchedUser: User, for user: User) -> User {
