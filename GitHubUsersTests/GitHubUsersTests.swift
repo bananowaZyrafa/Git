@@ -1,24 +1,32 @@
-//
-//  GitHubUsersTests.swift
-//  GitHubUsersTests
-//
-//  Created by Paweł W. on 09/12/2017.
-//  Copyright © 2017 Bart. All rights reserved.
-//
 
 import XCTest
+import RxSwift
+import RxTest
+import RxBlocking
 @testable import GitHubUsers
 
 class GitHubUsersTests: XCTestCase {
     
+    var scheduler: SchedulerType?
+    var apiClient: MOCKAPIClientService?
+    var usersViewModelService: MockUsersViewModelService?
+    var viewModel: MockUsersViewModel?
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        scheduler = ConcurrentDispatchQueueScheduler.init(qos: .default)
+        apiClient = MOCKAPIClientService.shared
+        usersViewModelService = MockUsersViewModelService()
+        viewModel = MockUsersViewModel(service: usersViewModelService!)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        scheduler = nil
+        usersViewModelService = nil
+        apiClient = nil
+        viewModel = nil
         super.tearDown()
+        
     }
     
     func testExample() {
@@ -32,5 +40,82 @@ class GitHubUsersTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func test_fetchUsers() {
+        guard let apiClient = apiClient, let scheduler = scheduler else {
+            XCTFail()
+            return
+        }
+        let usersObservable = apiClient.fetchUsers().subscribeOn(scheduler)
+        guard let result = try? usersObservable.toBlocking().first() else {
+            XCTFail()
+            return
+        }
+        XCTAssertTrue(apiClient.fetchUsersCalled)
+        XCTAssertEqual(result?.count, 30)
+        XCTAssertEqual(result?.first?.login, "mojombo")
+        
+    }
+    
+    func test_fetchRepos() {
+        guard let apiClient = apiClient, let scheduler = scheduler else {
+            XCTFail()
+            return
+        }
+        let reposObservable = apiClient.fetchRepos(for: nil).subscribeOn(scheduler)
+        guard let result = try? reposObservable.toBlocking().first() else {
+            XCTFail()
+            return
+        }
+        XCTAssertTrue(apiClient.fetchReposCalled)
+        XCTAssertEqual(result?.count, 30)
+        XCTAssertEqual(result?.first?.fullName, "mojombo/30daysoflaptops.github.io")
+        
+    }
+    
+    func test_fetchAvatars() {
+        guard let apiClient = apiClient, let scheduler = scheduler else {
+            XCTFail()
+            return
+        }
+        let avatarsObservable = apiClient.fetchAvatar(for: nil).subscribeOn(scheduler)
+        guard let result = try? avatarsObservable.toBlocking().first() else {
+            XCTFail()
+            return
+        }
+        XCTAssertTrue(result is UIImage?)
+        XCTAssertTrue(apiClient.fetchAvatarCalled)
+    }
+    
+    func test_UsersViewModel() {
+        guard let viewModel = viewModel, let scheduler = scheduler else {
+            XCTFail()
+            return
+        }
+        let fetchedUsers = viewModel.outputs.usersVariable.asObservable().subscribeOn(scheduler)
+        guard let result = try? fetchedUsers.toBlocking().first() else {
+            XCTFail()
+            return
+        }
+        guard let firstUser = result?.first else {
+            XCTFail()
+            return
+        }
+        let mockAPIClient = MOCKAPIClientService.shared
+        
+        XCTAssertTrue(mockAPIClient.mockRequestCalled)
+        XCTAssertTrue(mockAPIClient.fetchUsersCalled)
+        XCTAssertTrue(mockAPIClient.fetchReposCalled)
+        XCTAssertTrue(mockAPIClient.fetchAvatarCalled)
+        
+        
+        XCTAssertEqual(result?.count, 30)
+        
+        XCTAssertEqual(firstUser.login, "mojombo")
+        XCTAssertEqual(firstUser.repos.count, 30)
+        XCTAssertEqual(firstUser.repos.first?.fullName, "mojombo/30daysoflaptops.github.io")
+    }
+    
+    
     
 }

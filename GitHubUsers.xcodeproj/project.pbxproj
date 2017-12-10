@@ -23,6 +23,11 @@
 		C6DCCA591FDD9C9900268E76 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA581FDD9C9900268E76 /* RepoTableViewCell.swift */; };
 		C6DCCA5B1FDD9CBA00268E76 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA5A1FDD9CBA00268E76 /* UserTableViewCell.xib */; };
 		C6DCCA5D1FDD9D3100268E76 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA5C1FDD9D3100268E76 /* RepoTableViewCell.xib */; };
+		C6DCCA5F1FDDA05F00268E76 /* MockAPIServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA5E1FDDA05F00268E76 /* MockAPIServiceClient.swift */; };
+		C6DCCA611FDDA41E00268E76 /* MockUsersViewModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA601FDDA41E00268E76 /* MockUsersViewModelService.swift */; };
+		C6DCCA631FDDA43700268E76 /* MockUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA621FDDA43700268E76 /* MockUsersViewModel.swift */; };
+		C6DCCA661FDDA51200268E76 /* ReposResponse.JSON in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA641FDDA51200268E76 /* ReposResponse.JSON */; };
+		C6DCCA671FDDA51200268E76 /* UsersResponse.JSON in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA651FDDA51200268E76 /* UsersResponse.JSON */; };
 		C6E6B5571FDC513200846F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6B5561FDC513200846F90 /* AppDelegate.swift */; };
 		C6E6B55C1FDC513200846F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55A1FDC513200846F90 /* Main.storyboard */; };
 		C6E6B55E1FDC513200846F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55D1FDC513200846F90 /* Assets.xcassets */; };
@@ -62,6 +67,11 @@
 		C6DCCA581FDD9C9900268E76 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		C6DCCA5A1FDD9CBA00268E76 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		C6DCCA5C1FDD9D3100268E76 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		C6DCCA5E1FDDA05F00268E76 /* MockAPIServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIServiceClient.swift; sourceTree = "<group>"; };
+		C6DCCA601FDDA41E00268E76 /* MockUsersViewModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUsersViewModelService.swift; sourceTree = "<group>"; };
+		C6DCCA621FDDA43700268E76 /* MockUsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUsersViewModel.swift; sourceTree = "<group>"; };
+		C6DCCA641FDDA51200268E76 /* ReposResponse.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReposResponse.JSON; sourceTree = "<group>"; };
+		C6DCCA651FDDA51200268E76 /* UsersResponse.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersResponse.JSON; sourceTree = "<group>"; };
 		C6E6B5531FDC513200846F90 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6B5561FDC513200846F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E6B55B1FDC513200846F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +151,8 @@
 		C6E6B5551FDC513200846F90 /* GitHubUsers */ = {
 			isa = PBXGroup;
 			children = (
+				C6DCCA641FDDA51200268E76 /* ReposResponse.JSON */,
+				C6DCCA651FDDA51200268E76 /* UsersResponse.JSON */,
 				C6E6B57C1FDC54C900846F90 /* Users */,
 				C6E6B57B1FDC54C000846F90 /* Repos */,
 				C6E6B57A1FDC54B900846F90 /* Networking */,
@@ -161,6 +173,9 @@
 			children = (
 				C6E6B56B1FDC513200846F90 /* GitHubUsersTests.swift */,
 				C6E6B56D1FDC513200846F90 /* Info.plist */,
+				C6DCCA5E1FDDA05F00268E76 /* MockAPIServiceClient.swift */,
+				C6DCCA601FDDA41E00268E76 /* MockUsersViewModelService.swift */,
+				C6DCCA621FDDA43700268E76 /* MockUsersViewModel.swift */,
 			);
 			path = GitHubUsersTests;
 			sourceTree = "<group>";
@@ -333,8 +348,10 @@
 			files = (
 				C6DCCA5B1FDD9CBA00268E76 /* UserTableViewCell.xib in Resources */,
 				C6E6B5611FDC513200846F90 /* LaunchScreen.storyboard in Resources */,
+				C6DCCA671FDDA51200268E76 /* UsersResponse.JSON in Resources */,
 				C6E6B55E1FDC513200846F90 /* Assets.xcassets in Resources */,
 				C6E6B55C1FDC513200846F90 /* Main.storyboard in Resources */,
+				C6DCCA661FDDA51200268E76 /* ReposResponse.JSON in Resources */,
 				C6DCCA5D1FDD9D3100268E76 /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E6B56C1FDC513200846F90 /* GitHubUsersTests.swift in Sources */,
+				C6DCCA5F1FDDA05F00268E76 /* MockAPIServiceClient.swift in Sources */,
+				C6DCCA611FDDA41E00268E76 /* MockUsersViewModelService.swift in Sources */,
+				C6DCCA631FDDA43700268E76 /* MockUsersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

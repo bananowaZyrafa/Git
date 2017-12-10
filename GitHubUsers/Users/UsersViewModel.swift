@@ -33,8 +33,8 @@ final class UsersViewModel: UsersViewModelType {
     var presentReposForUser: PublishSubject<IndexPath>
     
     var usersVariable = Variable<[User]>([])
-    var error = PublishSubject<APIError>()
-    
+    private var error = PublishSubject<APIError>()
+//    var errorMessage = Observable<String>()
     
     private let disposeBag: DisposeBag
     
@@ -79,6 +79,11 @@ final class UsersViewModel: UsersViewModelType {
                     guard let safeSelf = self else {return user}
                     return safeSelf.userWith(image: image, from: fetchedUser, for: user)
                 }
+                }, onError: { [weak self ](error) in
+                    guard let safeSelf = self else { return}
+                    if let apiError = error as? APIError {
+                        safeSelf.error.onNext(apiError)
+                    }
             }).disposed(by: disposeBag)
         
         usersResponse
@@ -99,6 +104,11 @@ final class UsersViewModel: UsersViewModelType {
                     guard let safeSelf = self else {return user}
                     return safeSelf.userWith(repos: repos, from: fetchedUser, for: user)
                 }
+                }, onError: { [weak self ](error) in
+                    guard let safeSelf = self else { return}
+                    if let apiError = error as? APIError {
+                        safeSelf.error.onNext(apiError)
+                    }
             }).disposed(by: disposeBag)
         
     }
