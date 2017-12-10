@@ -10,6 +10,19 @@
 		47A7CD4747550A0FF92318A0 /* Pods_GitHubUsersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D096AC9E11A5DD109C7EFEEF /* Pods_GitHubUsersTests.framework */; };
 		A382D26E7D92984C22B7C23E /* Pods_GitHubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F74A63537A749CC88FCDF2 /* Pods_GitHubUsers.framework */; };
 		C6DCCA431FDD6A4000268E76 /* APIClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA421FDD6A4000268E76 /* APIClientService.swift */; };
+		C6DCCA451FDD6DDC00268E76 /* UsersViewModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA441FDD6DDC00268E76 /* UsersViewModelService.swift */; };
+		C6DCCA471FDD6E1400268E76 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA461FDD6E1400268E76 /* UsersViewModel.swift */; };
+		C6DCCA491FDD725700268E76 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA481FDD725700268E76 /* UsersViewController.swift */; };
+		C6DCCA4B1FDD731E00268E76 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA4A1FDD731E00268E76 /* Scene.swift */; };
+		C6DCCA4D1FDD733700268E76 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA4C1FDD733700268E76 /* SceneCoordinatorType.swift */; };
+		C6DCCA4F1FDD735200268E76 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA4E1FDD735200268E76 /* SceneTransitionType.swift */; };
+		C6DCCA511FDD737300268E76 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA501FDD737300268E76 /* SceneCoordinator.swift */; };
+		C6DCCA531FDD9BE600268E76 /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA521FDD9BE600268E76 /* ReposViewModel.swift */; };
+		C6DCCA551FDD9BFD00268E76 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA541FDD9BFD00268E76 /* ReposViewController.swift */; };
+		C6DCCA571FDD9C7C00268E76 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA561FDD9C7C00268E76 /* UserTableViewCell.swift */; };
+		C6DCCA591FDD9C9900268E76 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA581FDD9C9900268E76 /* RepoTableViewCell.swift */; };
+		C6DCCA5B1FDD9CBA00268E76 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA5A1FDD9CBA00268E76 /* UserTableViewCell.xib */; };
+		C6DCCA5D1FDD9D3100268E76 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA5C1FDD9D3100268E76 /* RepoTableViewCell.xib */; };
 		C6E6B5571FDC513200846F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6B5561FDC513200846F90 /* AppDelegate.swift */; };
 		C6E6B55C1FDC513200846F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55A1FDC513200846F90 /* Main.storyboard */; };
 		C6E6B55E1FDC513200846F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55D1FDC513200846F90 /* Assets.xcassets */; };
@@ -36,6 +49,19 @@
 		682578AE92071A00B18886CC /* Pods-GitHubUsersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsersTests/Pods-GitHubUsersTests.release.xcconfig"; sourceTree = "<group>"; };
 		C00729732A999C67C99AE422 /* Pods-GitHubUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DCCA421FDD6A4000268E76 /* APIClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientService.swift; sourceTree = "<group>"; };
+		C6DCCA441FDD6DDC00268E76 /* UsersViewModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModelService.swift; sourceTree = "<group>"; };
+		C6DCCA461FDD6E1400268E76 /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		C6DCCA481FDD725700268E76 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		C6DCCA4A1FDD731E00268E76 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		C6DCCA4C1FDD733700268E76 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		C6DCCA4E1FDD735200268E76 /* SceneTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		C6DCCA501FDD737300268E76 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		C6DCCA521FDD9BE600268E76 /* ReposViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		C6DCCA541FDD9BFD00268E76 /* ReposViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
+		C6DCCA561FDD9C7C00268E76 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		C6DCCA581FDD9C9900268E76 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		C6DCCA5A1FDD9CBA00268E76 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		C6DCCA5C1FDD9D3100268E76 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		C6E6B5531FDC513200846F90 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6B5561FDC513200846F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E6B55B1FDC513200846F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +176,10 @@
 		C6E6B5781FDC54A700846F90 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				C6DCCA4A1FDD731E00268E76 /* Scene.swift */,
+				C6DCCA4C1FDD733700268E76 /* SceneCoordinatorType.swift */,
+				C6DCCA4E1FDD735200268E76 /* SceneTransitionType.swift */,
+				C6DCCA501FDD737300268E76 /* SceneCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -175,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				C6E6B57E1FDC54FC00846F90 /* Cells */,
+				C6DCCA521FDD9BE600268E76 /* ReposViewModel.swift */,
+				C6DCCA541FDD9BFD00268E76 /* ReposViewController.swift */,
 			);
 			path = Repos;
 			sourceTree = "<group>";
@@ -183,6 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				C6E6B57D1FDC54EE00846F90 /* Cells */,
+				C6DCCA441FDD6DDC00268E76 /* UsersViewModelService.swift */,
+				C6DCCA461FDD6E1400268E76 /* UsersViewModel.swift */,
+				C6DCCA481FDD725700268E76 /* UsersViewController.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -190,6 +225,8 @@
 		C6E6B57D1FDC54EE00846F90 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C6DCCA561FDD9C7C00268E76 /* UserTableViewCell.swift */,
+				C6DCCA5A1FDD9CBA00268E76 /* UserTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -197,6 +234,8 @@
 		C6E6B57E1FDC54FC00846F90 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C6DCCA581FDD9C9900268E76 /* RepoTableViewCell.swift */,
+				C6DCCA5C1FDD9D3100268E76 /* RepoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -292,9 +331,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DCCA5B1FDD9CBA00268E76 /* UserTableViewCell.xib in Resources */,
 				C6E6B5611FDC513200846F90 /* LaunchScreen.storyboard in Resources */,
 				C6E6B55E1FDC513200846F90 /* Assets.xcassets in Resources */,
 				C6E6B55C1FDC513200846F90 /* Main.storyboard in Resources */,
+				C6DCCA5D1FDD9D3100268E76 /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +447,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E6B5571FDC513200846F90 /* AppDelegate.swift in Sources */,
+				C6DCCA471FDD6E1400268E76 /* UsersViewModel.swift in Sources */,
+				C6DCCA531FDD9BE600268E76 /* ReposViewModel.swift in Sources */,
 				C6E6B5801FDC552100846F90 /* User.swift in Sources */,
+				C6DCCA571FDD9C7C00268E76 /* UserTableViewCell.swift in Sources */,
+				C6DCCA511FDD737300268E76 /* SceneCoordinator.swift in Sources */,
+				C6DCCA4F1FDD735200268E76 /* SceneTransitionType.swift in Sources */,
 				C6E6B5841FDC55A000846F90 /* Bindable.swift in Sources */,
+				C6DCCA451FDD6DDC00268E76 /* UsersViewModelService.swift in Sources */,
+				C6DCCA491FDD725700268E76 /* UsersViewController.swift in Sources */,
 				C6E6B5821FDC553500846F90 /* Repo.swift in Sources */,
+				C6DCCA591FDD9C9900268E76 /* RepoTableViewCell.swift in Sources */,
+				C6DCCA551FDD9BFD00268E76 /* ReposViewController.swift in Sources */,
+				C6DCCA4D1FDD733700268E76 /* SceneCoordinatorType.swift in Sources */,
 				C6DCCA431FDD6A4000268E76 /* APIClientService.swift in Sources */,
+				C6DCCA4B1FDD731E00268E76 /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

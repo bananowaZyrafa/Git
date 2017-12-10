@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  GitHubUsers
-//
-//  Created by Paweł W. on 09/12/2017.
-//  Copyright © 2017 Bart. All rights reserved.
-//
 
 import UIKit
 
@@ -16,6 +9,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UIViewController()
+        
+        let sceneCoordinator = SceneCoordinator(window: window!)
+        let userViewModelService: UsersViewModelServiceType = UsersViewModelService()
+        let usersViewModel = UsersViewModel(service: userViewModelService, coordinator: sceneCoordinator)
+        let usersScene = Scene.usersScene(usersViewModel)
+        
+        sceneCoordinator.transition(to: usersScene, type: .root)
+        
         return true
     }
 

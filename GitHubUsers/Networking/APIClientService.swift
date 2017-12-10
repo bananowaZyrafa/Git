@@ -96,6 +96,7 @@ extension APIClientService: APIClientServiceType {
             return .error(APIError.invalidURL)
         }
         let request = URLRequest(url: url)
+        
         return URLSession.shared.rx.data(request: request).flatMap{ imageData -> Observable<UIImage> in
             guard let image = UIImage(data: imageData) else {
                 return .error(APIError.imageDataError)

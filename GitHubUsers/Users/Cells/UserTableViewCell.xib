@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="100" id="q7y-qe-Pqw" customClass="UserTableViewCell" customModule="GitHubUsers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q7y-qe-Pqw" id="lft-Kd-WpH">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-HI-IiB">
+                        <rect key="frame" x="8" y="24" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6OW-mC-fB2"/>
+                            <constraint firstAttribute="height" constant="50" id="CR4-Zz-tYN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo count " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXr-X2-dOx">
+                        <rect key="frame" x="66" y="50" width="108" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User login " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOO-kp-Vjc">
+                        <rect key="frame" x="66" y="24" width="246" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fGi-HI-IiB" firstAttribute="leading" secondItem="lft-Kd-WpH" secondAttribute="leadingMargin" id="5FM-Zb-et9"/>
+                    <constraint firstItem="FOO-kp-Vjc" firstAttribute="trailing" secondItem="lft-Kd-WpH" secondAttribute="trailingMargin" id="Gru-Yh-gsY"/>
+                    <constraint firstItem="FXr-X2-dOx" firstAttribute="bottom" secondItem="fGi-HI-IiB" secondAttribute="bottom" id="Ja9-84-Asx"/>
+                    <constraint firstItem="FXr-X2-dOx" firstAttribute="leading" secondItem="fGi-HI-IiB" secondAttribute="trailing" constant="8" id="Nby-UO-IdE"/>
+                    <constraint firstItem="FOO-kp-Vjc" firstAttribute="leading" secondItem="fGi-HI-IiB" secondAttribute="trailing" constant="8" id="UGX-1k-OiH"/>
+                    <constraint firstItem="fGi-HI-IiB" firstAttribute="centerY" secondItem="lft-Kd-WpH" secondAttribute="centerY" id="p6H-5U-1Dd"/>
+                    <constraint firstItem="FOO-kp-Vjc" firstAttribute="top" secondItem="fGi-HI-IiB" secondAttribute="top" id="vHk-jI-Ccv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImage" destination="fGi-HI-IiB" id="CvB-Ja-rxm"/>
+                <outlet property="loginLabel" destination="FOO-kp-Vjc" id="GRr-Xi-H7V"/>
+                <outlet property="repoCountLabel" destination="FXr-X2-dOx" id="NIM-fa-m6m"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="-246"/>
+        </tableViewCell>
+    </objects>
+</document>
