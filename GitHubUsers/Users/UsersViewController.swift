@@ -9,6 +9,8 @@ class UsersViewController: UIViewController, BindableType {
     var viewModel: UsersViewModelType!
     let disposeBag = DisposeBag()
     
+    var errorMessage = Variable<String?>(nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
@@ -29,8 +31,13 @@ class UsersViewController: UIViewController, BindableType {
         viewModel.outputs.usersVariable.asDriver().drive(onNext: { [weak self] _ in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
+        bindErrors()
     }
     
+    private func bindErrors() {
+        viewModel.outputs.errorMessage.asObservable().bind(to: errorMessage).disposed(by: disposeBag)
+        displayErrors()
+    }
 }
 
 extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
@@ -58,5 +65,18 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.inputs.presentReposForUser.onNext(indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+private typealias ErrorDisplay = UsersViewController
+extension ErrorDisplay {
+    func displayErrors() {
+        errorMessage.asDriver().drive(onNext: {[weak self] (errorMessage) in
+            guard errorMessage != nil else { return }
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            alertController.addAction(action)
+            self?.present(alertController, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 }

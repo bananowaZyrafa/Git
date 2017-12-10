@@ -28,6 +28,7 @@
 		C6DCCA631FDDA43700268E76 /* MockUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA621FDDA43700268E76 /* MockUsersViewModel.swift */; };
 		C6DCCA661FDDA51200268E76 /* ReposResponse.JSON in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA641FDDA51200268E76 /* ReposResponse.JSON */; };
 		C6DCCA671FDDA51200268E76 /* UsersResponse.JSON in Resources */ = {isa = PBXBuildFile; fileRef = C6DCCA651FDDA51200268E76 /* UsersResponse.JSON */; };
+		C6DCCA691FDDA5CC00268E76 /* ErrorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DCCA681FDDA5CC00268E76 /* ErrorBuilder.swift */; };
 		C6E6B5571FDC513200846F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6B5561FDC513200846F90 /* AppDelegate.swift */; };
 		C6E6B55C1FDC513200846F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55A1FDC513200846F90 /* Main.storyboard */; };
 		C6E6B55E1FDC513200846F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B55D1FDC513200846F90 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		C6DCCA621FDDA43700268E76 /* MockUsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUsersViewModel.swift; sourceTree = "<group>"; };
 		C6DCCA641FDDA51200268E76 /* ReposResponse.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReposResponse.JSON; sourceTree = "<group>"; };
 		C6DCCA651FDDA51200268E76 /* UsersResponse.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersResponse.JSON; sourceTree = "<group>"; };
+		C6DCCA681FDDA5CC00268E76 /* ErrorBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorBuilder.swift; sourceTree = "<group>"; };
 		C6E6B5531FDC513200846F90 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6B5561FDC513200846F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E6B55B1FDC513200846F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				C6DCCA421FDD6A4000268E76 /* APIClientService.swift */,
+				C6DCCA681FDDA5CC00268E76 /* ErrorBuilder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				C6DCCA491FDD725700268E76 /* UsersViewController.swift in Sources */,
 				C6E6B5821FDC553500846F90 /* Repo.swift in Sources */,
 				C6DCCA591FDD9C9900268E76 /* RepoTableViewCell.swift in Sources */,
+				C6DCCA691FDDA5CC00268E76 /* ErrorBuilder.swift in Sources */,
 				C6DCCA551FDD9BFD00268E76 /* ReposViewController.swift in Sources */,
 				C6DCCA4D1FDD733700268E76 /* SceneCoordinatorType.swift in Sources */,
 				C6DCCA431FDD6A4000268E76 /* APIClientService.swift in Sources */,
